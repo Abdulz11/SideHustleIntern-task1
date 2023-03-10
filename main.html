@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label for="name">Name</label>
+      <input type="text" name="name" required />
+      <br />
+      <br />
+
+      <label for="email">E-mail</label>
+      <input
+        type="email"
+        name="email"
+        title="name@mail.com"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+        required
+      />
+      <br />
+      <br />
+      <label for="number">Phone number</label>
+      <input type="text" name="number" required />
+      <br />
+      <br />
+      <label for="password">Password</label>
+      <input type="password" name="password" required />
+      <br />
+      <br />
+
+      <fieldset>
+        <legend>Gender</legend>
+        <label for="gender">Female</label>
+        <input
+          type="radio"
+          name="gender"
+          value="female
+         
+      "
+          required
+        />
+        <br />
+        <br />
+        <label for="gender">Male</label>
+        <input type="radio" name="gender" value="male" />
+      </fieldset>
+      <br />
+      <br />
+      <br />
+      <br />
+      <button id="submit-button">Submit</button>
+      <h3 id="text-box"></h3>
+    </form>
+    <script>
+      const textBox = document.querySelector("#text-box");
+      const submitButton = document.querySelector("#submit-button");
+      const form = document.querySelector("form");
+      console.log(form);
+      form.addEventListener(
+        "submit",
+        function (e) {
+          e.preventDefault();
+          submitForm();
+        },
+        false
+      );
+
+      function submitForm() {
+        console.log("hey there");
+        textBox.textContent = "Your form has succesfully submitted ";
+      }
+    </script>
+  </body>
+</html>
